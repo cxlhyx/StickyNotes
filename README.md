@@ -16,8 +16,9 @@ You can click the Preview link to take a look at your changes.
 --->
 
 ## 抓取
+
 ```
-git clone
+git clone git@github.com:cxlhyx/StickyNotes.git
 ```
 
 ## 安装依赖
