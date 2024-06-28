@@ -15,20 +15,55 @@ cxlhyx/cxlhyx is a ✨ special ✨ repository because its `README.md` (this file
 You can click the Preview link to take a look at your changes.
 --->
 
-## 抓取
+## 项目结构
+
+```
+D:.
+│  Main.py								   # 主函数，实现按键点击等功能
+│  Ui.ui                                   # 使用Qt Designer设计的界面ui
+│  Ui.py								   # 根据界面ui生成的python代码
+│  LineDelegate.py						   # 左侧event栏的自定义委托
+│  Sql.py								   # 数据：数据库增删改查、event实体
+│  DetailBox.py                            # event详情盒：查看event、更新event
+│  Startup.py							   # 开机自启动
+│  imports.py							   # 导入需要的库
+│  requirements.txt						   # 项目依赖
+│  README.md							   
+│  Database.db                             # sqlite数据库
+│  StickyNotes.exe                         # 打包成的exe
+│  StickyNotes.exe - 快捷方式.lnk           # exe的快捷方式，用户可能需要自己更改
+│  qrcode.jpg							   # 作者wx
+│
+└─__pycache__							   # 运行缓存
+        DetailBox.cpython-39.pyc
+        imports.cpython-39.pyc
+        LineDelegate.cpython-39.pyc
+        Sql.cpython-39.pyc
+        Startup.cpython-39.pyc
+        Ui.cpython-39.pyc
+```
+
+## 使用
+
+### 抓取
 
 ```
 git clone git@github.com:cxlhyx/StickyNotes.git
 ```
 
-## 安装依赖
+### 安装依赖
 
 ```
 pip install -r requirements.txt
 ```
 
-## 运行
+### 运行
 
 ```
 python Main.py
 ```
+
+## 注意
+
+- event的日期格式必须为"**yyyy-MM-dd hh:mm:ss**"，否则右侧日历表将无法对选中的event日期进行涂色。
+- event的file可以带双引号也可以不带双引号，但必须为**绝对路径**。
