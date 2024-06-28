@@ -17,7 +17,7 @@ class Ui(object):
         Frame.setWindowOpacity(0.5)
 
         # 设置窗口为无边框
-        Frame.setWindowFlags(Qt.FramelessWindowHint)  # type: ignore
+        Frame.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool)  # type: ignore
 
         # 设置窗口位置
         self.fixed_position = QPoint(1160, 0)  # type: ignore # 固定位置
