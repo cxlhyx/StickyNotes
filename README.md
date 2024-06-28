@@ -19,22 +19,22 @@ You can click the Preview link to take a look at your changes.
 
 ```
 D:.
-│  Main.py								   # 主函数，实现按键点击等功能
+│  Main.py                                 # 主函数，实现按键点击等功能
 │  Ui.ui                                   # 使用Qt Designer设计的界面ui
-│  Ui.py								   # 根据界面ui生成的python代码
-│  LineDelegate.py						   # 左侧event栏的自定义委托
-│  Sql.py								   # 数据：数据库增删改查、event实体
+│  Ui.py                                   # 根据界面ui生成的python代码
+│  LineDelegate.py                         # 左侧event栏的自定义委托
+│  Sql.py                                  # 数据：数据库增删改查、event实体
 │  DetailBox.py                            # event详情盒：查看event、更新event
-│  Startup.py							   # 开机自启动
-│  imports.py							   # 导入需要的库
-│  requirements.txt						   # 项目依赖
+│  Startup.py                              # 开机自启动
+│  imports.py                              # 导入需要的库
+│  requirements.txt                        # 项目依赖
 │  README.md							   
 │  Database.db                             # sqlite数据库
 │  StickyNotes.exe                         # 打包成的exe
 │  StickyNotes.exe - 快捷方式.lnk           # exe的快捷方式，用户可能需要自己更改
-│  qrcode.jpg							   # 作者wx
+│  qrcode.jpg                              # 作者wx
 │
-└─__pycache__							   # 运行缓存
+└─__pycache__                              # 运行缓存
         DetailBox.cpython-39.pyc
         imports.cpython-39.pyc
         LineDelegate.cpython-39.pyc
