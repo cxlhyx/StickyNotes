@@ -197,7 +197,7 @@ class Main(QMainWindow):  # type: ignore
             self.msg_window.setWindowTitle("About")
             self.msg_window.setWindowFlags(Qt.Drawer)
             self.layout = QVBoxLayout()
-            self.label = QLabel("版本: 1.0.0\n作者: cxlhyx")
+            self.label = QLabel("版本: 1.0.1\n作者: cxlhyx")
             self.layout.addWidget(self.label)
             self.msg_window.setLayout(self.layout)
             self.msg_window.show()
