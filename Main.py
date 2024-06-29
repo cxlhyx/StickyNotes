@@ -6,7 +6,7 @@ plugin_path = os.path.join(
 os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = plugin_path
 
 
-class Main(QMainWindow):
+class Main(QMainWindow):  # type: ignore
     def __init__(self):
         super().__init__()
 
@@ -103,14 +103,16 @@ class Main(QMainWindow):
             for i in self.db.SelectALL():
                 self.model.appendRow(i)  # 添加项目
         elif action == action2:
-            file = self.item.file
-            if file == "":
-                QMessageBox.warning(self, "文件打开出错", "文件为空")
-                return
-            try:
-                os.startfile(file)  # 在 Windows 上打开文件
-            except:
-                QMessageBox.warning(self, "文件打开出错", "暂不支持这种类型的文件")
+            files = self.item.file
+            files = files.split("; ")
+            for file in files:
+                if file == "":
+                    QMessageBox.warning(self, "文件打开出错", "文件为空")
+                    return
+                try:
+                    os.startfile(file)  # 在 Windows 上打开文件
+                except:
+                    QMessageBox.warning(self, "文件打开出错", "暂不支持这种类型的文件")
         elif action == action3:
             self.db.Delete(self.item.id)
             self.model.clear()
