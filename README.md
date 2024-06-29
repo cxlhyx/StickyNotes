@@ -67,3 +67,4 @@ python Main.py
 
 - event的日期格式必须为"**yyyy-MM-dd hh:mm:ss**"，否则右侧日历表将无法对选中的event日期进行涂色。
 - event的file可以带双引号也可以不带双引号，但必须为**绝对路径**。
+- 小Bug：重新开机自动启动时，event列表数据不显示，重启一下就好了，将尽快修复。
