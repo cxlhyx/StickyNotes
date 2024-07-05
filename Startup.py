@@ -54,6 +54,18 @@ class Startup:
             print(f"Failed to check registry: {e}")
             return False
 
+    def create_bat_file(directory):
+        # 定义批处理文件中需要包含的命令
+        bat_commands = [
+            "cd " + directory,
+            directory[0:2],
+            'start "" "StickyNotes.exe"',
+            "exit",
+        ]
+        with open(directory + "\StickyNotes.bat", "w") as bat_file:
+            for command in bat_commands:
+                bat_file.write(command + "\n")
+
 
 if __name__ == "__main__":
     # Pass the script path to the function

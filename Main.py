@@ -4,6 +4,9 @@ plugin_path = os.path.join(
     os.path.dirname(sys.executable), "Lib", "site-packages", "PyQt5", "Qt", "plugins"
 )
 os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = plugin_path
+# 设置为exe即将存储的目录路径或克隆下来的项目路径
+directory = "D:\college\Project\StickyNotes"
+Startup.create_bat_file(directory)
 
 
 class Main(QMainWindow):  # type: ignore
@@ -18,7 +21,7 @@ class Main(QMainWindow):  # type: ignore
         self.setWindowTitle("Sticky Notes")
         self.is_on_top = False  # 是否置顶
         self.is_startup = Startup.is_in_startup(
-            "D:\college\Project\StickyNotes\StickyNotes.exe"
+            directory + "\StickyNotes.bat"
         )  # 是否开机启动
         self.colored_dates = []  # 选中item的日期
         self.item = None  # 选中的item
@@ -186,18 +189,16 @@ class Main(QMainWindow):  # type: ignore
             self.is_on_top = not self.is_on_top  # Toggle the state
         elif action == action3:
             if self.is_startup:
-                Startup.remove_from_startup(
-                    "D:\college\Project\StickyNotes\StickyNotes.exe"
-                )
+                Startup.remove_from_startup(directory + "\StickyNotes.bat")
             else:
-                Startup.add_to_startup("D:\college\Project\StickyNotes\StickyNotes.exe")
+                Startup.add_to_startup(directory + "\StickyNotes.bat")
             self.is_startup = not self.is_startup  # Toggle the state
         elif action == action4:
             self.msg_window = QWidget()
             self.msg_window.setWindowTitle("About")
             self.msg_window.setWindowFlags(Qt.Drawer)
             self.layout = QVBoxLayout()
-            self.label = QLabel("版本: 1.0.1\n作者: cxlhyx")
+            self.label = QLabel("版本: 1.0.2\n作者: cxlhyx")
             self.layout.addWidget(self.label)
             self.msg_window.setLayout(self.layout)
             self.msg_window.show()

@@ -5,6 +5,7 @@
 - 📫 How to reach me ...
   - [README 目录（持续更新中） 各种错误处理、爬虫实战及模板、百度智能云人脸识别、计算机视觉深度学习CNN图像识别与分类、PaddlePaddle自然语言处理知识图谱、GitHub、运维...](https://blog.csdn.net/muaamua/article/details/134426428?spm=1001.2014.3001.5502)
   - WeChat：1297767084
+  - Email：cxlhyx1297767084@gmail.com
   - GitHub：[https://github.com/cxlhyx](https://github.com/cxlhyx)
     ![在这里插入图片描述](/qrcode.jpg)
 - 😄 Pronouns: ...
@@ -71,7 +72,11 @@ python Main.py
 
   对于每个文件可以用**双引号**也可以不用，对于多个文件中间需要用"; "隔开（**英文分号和空格**），最后一个文件时不能再用"; "。
 
-- 小Bug：重新开机自动启动时，event列表数据不显示，**重启一下程序**就好了，将尽快修复。
+- 建议不要直接使用项目的exe，以免bug。先修改Main.py中第8行的directory = "D:\college\Project\StickyNotes"，改为exe即将存储的路径或直接改为项目克隆的路径，接着在克隆下来的目录下使用以下命令即可编译生成exe文件。StickyNotes.exe 将被生成在 dist 目录中。PyInstaller 还会创建 build 目录和 MyApp.spec 文件。build 目录包含构建过程中使用的中间文件，而 .spec 文件是构建过程的配置文件。如果不希望保留 build 目录和 .spec 文件，可以手动删除它们。
+```
+pip install pyinstaller
+pyinstaller -F -w --name StickyNotes Main.py
+```
 
 ## release
 
@@ -79,4 +84,6 @@ v1.0.0：2024-06-29 基础功能
 
 v1.0.1：2024-06-29 新增打开多个文件的功能
 
-  
+v1.0.2: 2024-07-05 修复了开机自动启动event列表数据不显示的问题
+
+## 欢迎微信、邮箱、GitHub提出建议或问题
